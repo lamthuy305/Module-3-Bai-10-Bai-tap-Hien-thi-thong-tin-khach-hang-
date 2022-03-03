@@ -13,7 +13,7 @@
         }
         td{
             width: 150px;
-            height: 100px;
+            height: 120px;
         }
         #abc{
             text-align: center;
@@ -23,10 +23,10 @@
 <body>
 <%
     List<Customer> customers = new ArrayList<>();
-    customers.add(new Customer("Tuấn Cường", "2003-8-6", "Đăk Lăk", "https://hthaostudio.com/wp-content/uploads/2020/06/anh-doanh-nhan-dep-1180x760.jpg"));
-    customers.add(new Customer("Nguyễn Ngọc Bách", "1997", "Hà Nội", "http://studiochupanhdep.com//Upload/Images/Product/anh-cuc-hoa-mi-2019.png"));
-    customers.add(new Customer("Á Đù Tình", "1997", "Hà Nội", "https://cdn.dealtoday.vn/img/s630x420/f16250e7fde0474d8693fd92efd7c9af.jpg?sign=N9MoF3xpavyOJLhQ2WEdpw"));
-    pageContext.setAttribute("customers", customers);
+    customers.add(new Customer("Tuấn Cường", "2003-8-6", "Đăk Lăk", "/img/1.png"));
+    customers.add(new Customer("Nguyễn Ngọc Bách", "1997", "Hà Nội", "/img/2.png"));
+    customers.add(new Customer("Á Đù Tình", "1997", "Hà Nội", "/img/3.png"));
+    pageContext.setAttribute("listCustomers", customers);
 %>
 <table>
     <tr id="abc">
@@ -36,12 +36,12 @@
         <td><b>Ảnh</b></td>
     </tr>
 
-    <c:forEach var="customer" items="${customers}">
+    <c:forEach var="customer" items="${listCustomers}">
         <tr>
             <td>${customer.name}</td>
             <td>${customer.dateOfBirth}</td>
             <td>${customer.address}</td>
-            <td><img src="${customer.img}" alt="" height="100px" width="150px"></td>
+            <td><img src="${customer.img}" alt="" height="120px" width="150px"></td>
         </tr>
     </c:forEach>
 
